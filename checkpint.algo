@@ -1,0 +1,16 @@
+ALGORITHM phrase
+VAR
+    longueur,voyelle,mot :INTEGER ;
+BEGIN
+    Read(phrase);
+    IF (C est un caractere) THEN
+        longueur = longueur + 1
+    IF (c est une voyelle ) THEN
+        voyelle = voyelle + 1
+    ELSE
+        mot = mot + 1
+    END_IF
+    Write(longueur)
+    Write(voyelle)
+    Write(mot)
+END
