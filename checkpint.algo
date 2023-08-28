@@ -1,15 +1,23 @@
 ALGORITHM phrase
 VAR
-    longueur,voyelle,mot :INTEGER ;
+    longueur,voyelle,mot :INTEGER =0;
+    caractere : CHAR
 BEGIN
     Read(phrase);
-    IF (C est un caractere) THEN
-        longueur = longueur + 1
-    IF (c est une voyelle ) THEN
-        voyelle = voyelle + 1
-    ELSE
-        mot = mot + 1
-    END_IF
+    WHILE (Read(caractere)) DO
+        IF (caractere = ".") THEN
+            Return END phrase
+        ELSE
+            longueur = longueur + 1
+        END_IF
+        IF (caractere="a" or caractere="e" or caractere="i" or caractere="o" or caractere="u") THEN
+            voyelle = voyelle + 1
+        END_IF
+        IF (caractere = " ") THEN
+            mot = mot + 1
+        END_IF
+    END_WHILE
+    
     Write(longueur)
     Write(voyelle)
     Write(mot)
