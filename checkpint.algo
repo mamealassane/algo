@@ -1,22 +1,28 @@
 ALGORITHM phrase
 VAR
-    longueur,voyelle,mot :INTEGER =0;
-    caractere : CHAR
+    phrase: ARRAY_OF CHAR[length];
+    longueur,voyelle : INTEGER ;
+    mot :INTEGER =1;
+    
+    i : INTEGER ;
 BEGIN
     Read(phrase);
-    WHILE (Read(caractere)) DO
-        IF (caractere = ".") THEN
+        FOR i FROM 0 TO phrase.length  DO
+        IF (phrase[i] = ".") THEN
             Return END phrase
-        ELSE
+        END_IF
+        IF (phrase[i] !=" ") THEN
             longueur = longueur + 1
         END_IF
-        IF (caractere="a" or caractere="e" or caractere="i" or caractere="o" or caractere="u") THEN
+        IF (phrase[i]="a" or phrase[i]="e" or phrase[i]="i" or phrase[i]="o" or phrase[i]="u") THEN
             voyelle = voyelle + 1
         END_IF
-        IF (caractere = " ") THEN
+        IF (phrase[i] = " ") THEN
             mot = mot + 1
         END_IF
-    END_WHILE
+        END_FOR
+        
+    
     
     Write(longueur)
     Write(voyelle)
